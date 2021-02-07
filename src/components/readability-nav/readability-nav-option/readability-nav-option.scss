@@ -1,0 +1,37 @@
+@use 'sass:color';
+@use '../../../sass/gadgets';
+
+.readability-option {
+  @include gadgets.fontSet(normal);
+  display: block;
+  padding-left: 2.3em;
+  margin: 2px 0;
+  border-radius: 2px;
+  transition: background-color linear 100ms;
+
+  &:before {
+    @include gadgets.iconFontAwesome('check-circle');
+    display: none;
+    color: gadgets.$color-green-techcrunch;
+    position: absolute;
+    left: 2em;
+  }
+
+  &[role="menuitemradio"] {
+    &[aria-selected="true"] {
+      pointer-events: none;
+
+      &:before {
+        display: inline-block;
+      }
+    }
+
+    &:not([aria-selected="true"]) {
+      cursor: pointer;
+
+      &:hover {
+        background: color.adjust(gadgets.$color-green-techcrunch, $alpha: -0.9);
+      }
+    }
+  }
+}

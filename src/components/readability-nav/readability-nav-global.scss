@@ -1,0 +1,6 @@
+@use 'sass:color';
+@use '../../sass/gadgets';
+
+$nav-shadow: 0 5px 10px color.adjust(gadgets.$color-gray-shadows, $alpha: -.8);
+$nav-background: gadgets.$color-white;
+$nav-transition: all ease-in 100ms;

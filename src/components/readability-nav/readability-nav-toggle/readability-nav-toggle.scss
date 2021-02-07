@@ -1,0 +1,40 @@
+@use '../../../sass/gadgets';
+@use '../readability-nav-global' as nav;
+
+.readability-toggle {
+  display: block;
+  position: relative;
+  padding: 1em;
+  cursor: pointer;
+  text-transform: lowercase;
+  letter-spacing: gadgets.$l-spacing;
+  background: nav.$nav-background;
+  transition: nav.$nav-transition;
+  opacity: .75;
+
+  &:before {
+    @include gadgets.iconFontAwesome('book-reader');
+    margin: 0 .5em 0 0;
+  }
+
+  &:after {
+    @include gadgets.iconFontAwesome('chevron-down');
+    margin: 0 0 0 .3em;
+  }
+
+  &:hover {
+    box-shadow: nav.$nav-shadow;
+  }
+
+  &[aria-expanded="true"] {
+    &:after {
+      @include gadgets.iconFontAwesome('chevron-up');
+    }
+  }
+
+  &:hover, &[aria-expanded="true"] {
+    box-shadow: nav.$nav-shadow;
+    background: gadgets.$color-white;
+    opacity: 1;
+  }
+}

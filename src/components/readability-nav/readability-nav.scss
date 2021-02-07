@@ -1,0 +1,77 @@
+@use 'sass:color';
+@use 'sass:map';
+@use '../../sass/gadgets';
+@use 'readability-nav-global' as nav;
+
+
+:host {
+  position: absolute;
+  z-index: 1;
+  display: inline-block;
+  right: 2em;
+  top: 0;
+}
+
+.nav-content, .group__nav {
+  @include gadgets.resetList();
+}
+
+.nav-content {
+  display: none;
+  padding: 0 0 .5em 0;
+  background: gadgets.$color-white;
+  animation: navContent forwards 300ms;
+
+  &:before {
+    display: block;
+    content: "";
+    margin: 0 auto;
+    height: 1px;
+    background: color.adjust(gadgets.$color-gray-shadows, $alpha: -0.6);
+    animation: navDecorator forwards 800ms;
+    opacity: .5;
+  }
+
+  &--is-expanded {
+    display: block;
+  }
+}
+
+.group {
+  margin-top: .8em;
+  padding: 0 1em;
+
+  &__title {
+    display: block;
+    margin-bottom: 2px;
+    padding: .2em;
+    font-variant-caps: all-small-caps;
+    letter-spacing: gadgets.$l-spacing*2;
+    background: color.adjust(gadgets.$color-gray-shadows, $alpha: -0.9);
+    border-radius: 2px;
+  }
+}
+
+@keyframes navContent {
+  0% {
+    opacity: 0;
+    transform: perspective(500px) rotateY(-90deg);
+    transition: 200ms linear 800ms;
+  }
+  80% {
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: nav.$nav-shadow;
+  }
+}
+
+@keyframes navDecorator {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

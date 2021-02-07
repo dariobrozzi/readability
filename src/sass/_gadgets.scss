@@ -1,0 +1,33 @@
+@use 'sass:string';
+@use 'sass:color';
+@forward '../../node_modules/sass-gadgets/all';
+
+
+$layout-breakpoint-mobile: 480;
+$layout-breakpoint-tablet: 768;
+
+$l-spacing: .035em;
+$font-unit: 'em';
+
+@mixin navLogic() {
+  [role="menu"] {
+    display: none;
+  }
+  [aria-haspopup="true"][aria-expanded="true"] + [role="menu"] {
+    display: block;
+  }
+}
+
+@mixin resetList($padding: null) {
+  list-style: none;
+  margin-block: {
+    start: 0;
+    end: 0;
+  }
+  @if ($padding == null) {
+    padding: {
+      left: 0;
+      right: 0;
+    }
+  }
+}

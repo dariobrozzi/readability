@@ -1,0 +1,35 @@
+{
+  "name": "readability-gadget",
+  "version": "0.0.3",
+  "description": "Readability gadget",
+  "main": "dist/index.cjs.js",
+  "module": "dist/custom-elements/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/custom-elements/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/readability/readability.esm.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dariobrozzi/readability.git"
+  },
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@stencil/core": "^2.0.1",
+    "@stencil/sass": "^1.3.2",
+    "sass-gadgets": "0.0.1"
+  },
+  "author": "Dario Brozzi <dbrozzi@gmail.com> (http://www.dariobrozzi.com/)",
+  "license": "MIT"
+}
