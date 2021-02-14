@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { SwapClass } from "./models/readability-nav.types";
 export namespace Components {
     interface ReadabilityNav {
     }
@@ -45,7 +46,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ReadabilityNav {
-        "onOptionSelected"?: (event: CustomEvent<any>) => void;
+        "onOptionSelected"?: (event: CustomEvent<SwapClass>) => void;
     }
     interface ReadabilityNavOption {
         "description"?: string;

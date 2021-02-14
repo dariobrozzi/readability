@@ -4,7 +4,7 @@ import {sass} from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'readability',
-  bundles: [{components: ['readability-nav']}],
+  bundles: [{components: ['readability-nav', 'readability-nav-toggle', 'readability-nav-option']}],
   outputTargets: [
     {
       type: 'dist',

@@ -1,4 +1,6 @@
-import { Component, State, Host, Event, h, EventEmitter } from '@stencil/core';
+import {Component, State, Host, Event, h, EventEmitter} from '@stencil/core';
+import {NavOption, NavGroup, SwapClass} from '../../models/readability-nav.types';
+import {READABILITY_SETTINGS} from './readability-nav.constants';
 
 @Component({
   tag: 'readability-nav',
@@ -6,90 +8,9 @@ import { Component, State, Host, Event, h, EventEmitter } from '@stencil/core';
   shadow: true,
 })
 export class ReadabilityNav {
-  @Event() optionSelected: EventEmitter<any>;
+  @Event() optionSelected: EventEmitter<SwapClass>;
   @State() isExpanded: boolean = false;
-  @State() settings = [
-    {
-      label: 'Theme',
-      options: [
-        {
-          label: 'Light',
-          description: 'Light Theme',
-          selected: true,
-        },
-        {
-          label: 'Dark',
-          description: 'Dark Theme',
-          className: 'dark-theme',
-        },
-      ],
-    },
-    {
-      label: 'Column Width',
-      options: [
-        {
-          label: 'Adaptive',
-          description: 'Adaptive width',
-          selected: true,
-        },
-        {
-          label: 'Narrow',
-          description: 'Narrow width',
-          className: 'narrow-width',
-        },
-      ],
-    },
-    {
-      label: 'Font Type',
-      options: [
-        {
-          label: 'Serif',
-          description: 'Serif font type',
-          selected: true,
-        },
-        {
-          label: 'Sans-Serif',
-          description: 'Sans-Serif font type',
-          className: 'font-plain',
-        },
-      ],
-    },
-    {
-      label: 'Font Size',
-      options: [
-        {
-          label: 'Small',
-          description: 'Small font size',
-          className: 'font-small',
-        },
-        {
-          label: 'Medium',
-          description: 'Medium font size',
-          selected: true,
-        },
-        {
-          label: 'Large',
-          description: 'Large font size',
-          className: 'font-large',
-        },
-      ],
-    },
-    {
-      label: 'Vertical spacing',
-      options: [
-        {
-          label: 'Default',
-          description: 'Default spacing',
-          selected: true,
-        },
-        {
-          label: 'Double',
-          description: 'Double spacing',
-          className: 'double-space',
-        },
-      ],
-    },
-  ];
+  @State() settings: any[] = READABILITY_SETTINGS;
 
   title: string = 'Readability Settings';
 
@@ -97,12 +18,12 @@ export class ReadabilityNav {
     this.isExpanded = !this.isExpanded;
   }
 
-  selectOption(item, group) {
-    let classSwap = { current: null, new: item.className };
-    this.settings.map((g) => {
+  selectOption(item: NavOption, group: NavGroup) {
+    const classSwap: SwapClass = {currentClass: null, newClass: item.className};
+    this.settings.map((g: NavGroup) => {
       if (g === group) {
-        g.options.map((i) => {
-          classSwap.current = i.selected ? i.className : null;
+        g.options.map((i: NavOption) => {
+          classSwap.currentClass = i.selected ? i.className : null;
           i.selected = (i === item);
         });
       }
