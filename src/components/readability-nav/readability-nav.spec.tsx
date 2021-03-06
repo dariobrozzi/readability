@@ -1,5 +1,5 @@
-import {ReadabilityNav} from './readability-nav';
-import {NavOption, NavGroup, SwapClass} from "../../models/readability-nav.types";
+import { ReadabilityNav } from './readability-nav';
+import { NavOption, NavGroup, SwapClass } from '../../models/readability-nav.types';
 import fn = jest.fn;
 
 const component = new ReadabilityNav();
@@ -37,7 +37,7 @@ const mockSwapClass: SwapClass = {
 
 beforeEach(() => {
   component.settings = mockSettings;
-})
+});
 
 it('should toggle navigation', () => {
   component.toggle();

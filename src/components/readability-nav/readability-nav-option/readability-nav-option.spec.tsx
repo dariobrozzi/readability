@@ -1,4 +1,4 @@
-import {ReadabilityNavOption} from './readability-nav-option';
+import { ReadabilityNavOption } from './readability-nav-option';
 import fn = jest.fn;
 
 const component = new ReadabilityNavOption();

@@ -1,4 +1,4 @@
-import {ReadabilityNavToggle} from './readability-nav-toggle';
+import { ReadabilityNavToggle } from './readability-nav-toggle';
 import fn = jest.fn;
 
 const component = new ReadabilityNavToggle();

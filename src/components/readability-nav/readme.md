@@ -7,9 +7,9 @@
 
 ## Events
 
-| Event            | Description | Type               |
-| ---------------- | ----------- | ------------------ |
-| `optionSelected` |             | `CustomEvent<any>` |
+| Event            | Description | Type                     |
+| ---------------- | ----------- | ------------------------ |
+| `optionSelected` |             | `CustomEvent<SwapClass>` |
 
 
 ## Dependencies

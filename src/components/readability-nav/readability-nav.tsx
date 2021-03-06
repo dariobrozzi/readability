@@ -1,6 +1,6 @@
-import {Component, State, Host, Event, h, EventEmitter} from '@stencil/core';
-import {NavOption, NavGroup, SwapClass} from '../../models/readability-nav.types';
-import {READABILITY_SETTINGS} from './readability-nav.constants';
+import { Component, State, Host, Event, h, EventEmitter } from '@stencil/core';
+import { NavOption, NavGroup, SwapClass } from '../../models/readability-nav.types';
+import { READABILITY_SETTINGS } from './readability-nav.constants';
 
 @Component({
   tag: 'readability-nav',
