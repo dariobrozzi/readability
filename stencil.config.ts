@@ -10,6 +10,9 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [
+        { src: 'assets/fonts' }
+      ]
     },
     {
       type: 'dist-custom-elements-bundle',

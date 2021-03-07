@@ -5,18 +5,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"/>
   <title>Readability Gadget</title>
 
-  <!--
+
   <script type="module" src="/build/readability-gadget.esm.js"></script>
   <script nomodule src="/build/readability-gadget.js"></script>
 
+  <!--
+  <script type="module"
+        src="https://unpkg.com/readability-gadget@0.1.0/dist/readability-gadget/readability-gadget.esm.js"></script>
+  -->
 
--->
+  <style type="text/css">
+    @font-face {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      font-style: normal;
+      font-display: block;
+      src: url('./assets/fonts/fa-solid-900.eot');
+      src: url('./assets/fonts/fa-solid-900.eot?#iefix') format('embedded-opentype'),
+      url('./assets/fonts/fa-solid-900.woff2') format('woff2'),
+      url('./assets/fonts/fa-solid-900.woff') format('woff'),
+      url('./assets/fonts/fa-solid-900.ttf') format('truetype'),
+      url('./assets/fonts/fa-solid-900.svg#fontawesome') format('svg');
+    }
 
-  <script src="http://unpkg.com/browse/readability-gadget@0.0.7/dist/readability-gadget/readability-gadget.esm.js"></script>
+    readability-nav {
+      position: absolute;
+      z-index: 1;
+      right: 2em;
+      top: 0;
+    }
 
+    body:not(.dark-theme) {
+      --text: black;
+    }
+
+    body.dark-theme {
+      --background: black;
+      --text: white;
+    }
+
+    body:not(.double-space) {
+      --line-height: 1.5;
+    }
+
+    body.double-space {
+      --line-height: 3;
+    }
+
+    body:not(.font-plain) {
+      --font-family: serif;
+    }
+
+    body.font-plain {
+      --font-family: sans-serif;
+    }
+
+    body.font-small {
+      --font-size: 80%;
+    }
+
+    body.font-large {
+      --font-size: 120%;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .header, .content {
+      padding: 1em 2em;
+    }
+
+    .content {
+      color: var(--text);
+      background: var(--background);
+      font-size: var(--font-size);
+      font-family: var(--font-family);
+      line-height: var(--line-height);
+      transition: all ease-in 200ms;
+    }
+
+    body.narrow-width .content__wrapper {
+      margin: 0 auto;
+      max-width: 400px;
+    }
+  </style>
 </head>
 <body>
-<h1>Readability Navigation</h1>
-<readability-nav></readability-nav>
+<header class="header">
+  <h1>
+    Readability Gadget
+  </h1>
+  <readability-nav></readability-nav>
+</header>
+<article class="content">
+  <div class="content__wrapper">
+    <h1>Readability Navigation</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a urna lectus. Nunc suscipit ornare justo non
+      vulputate.
+      Vivamus fringilla arcu metus, eu gravida neque finibus eu. In eget massa quis ipsum vestibulum pretium. Cras
+      hendrerit
+      malesuada gravida. Aliquam erat volutpat. Maecenas nec tellus maximus, malesuada eros vitae, bibendum quam.
+      Praesent
+      ut neque sit amet ante maximus accumsan. Sed accumsan vestibulum erat, id sagittis eros. Morbi id tempor turpis.
+      Nunc
+      ut commodo risus, vitae aliquet orci.
+    </p>
+    <p>
+      Sed quis aliquet dui. Vivamus risus nisi, feugiat eget elit non, vestibulum fermentum dolor. Pellentesque maximus
+      ac
+      nisi eu facilisis. Quisque nec purus vitae nisi elementum porttitor. Vivamus tristique odio in erat pretium, nec
+      varius turpis porta. Curabitur dui tellus, egestas a risus at, laoreet fermentum quam. Pellentesque habitant morbi
+      tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus auctor est eget risus pellentesque
+      tristique. Quisque scelerisque fermentum est sit amet volutpat. Duis in euismod lacus. Curabitur dignissim ipsum
+      et
+      quam viverra blandit. Nulla facilisi. Etiam orci tellus, mollis vel neque vulputate, porta mattis lectus. Nulla
+      sodales, odio vitae tempor lacinia, dui augue vulputate risus, id faucibus eros purus id ante.
+    </p>
+    <p>Curabitur rhoncus nibh faucibus felis elementum, sed porttitor diam lobortis. Duis lacinia nisi at tincidunt
+      hendrerit. Nulla facilisi. Vivamus imperdiet diam a urna gravida, id accumsan velit commodo. Sed consectetur,
+      libero
+      et consectetur scelerisque, magna odio egestas elit, eu iaculis sapien felis sed dolor. Aenean at mi porta nunc
+      gravida pellentesque. Nunc vel justo a nisi dictum vestibulum. Fusce interdum semper euismod. Aenean tincidunt
+      enim
+      et
+      diam porttitor, vitae sollicitudin justo lobortis.</p>
+    <p>Nunc suscipit sit amet leo ut pellentesque. Duis a magna ornare, fermentum urna in, blandit sapien. Aenean
+      tincidunt
+      nibh eu blandit mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+      Cras
+      fermentum congue auctor. Integer lacinia leo at nisl sodales aliquet. Quisque sit amet tristique mi. Integer vel
+      massa
+      ac magna pellentesque sagittis. Donec id viverra ex. Pellentesque ullamcorper efficitur purus at accumsan. Nunc ac
+      fermentum leo. Curabitur metus diam, dapibus et eros vel, lobortis rutrum felis. Pellentesque condimentum finibus
+      egestas.</p>
+    <p>Nam ultrices sed elit non efficitur. Morbi porta libero vitae orci accumsan euismod. Cras ut feugiat nisi. Donec
+      in
+      auctor erat, id ullamcorper felis. Cras commodo molestie ultrices. Fusce viverra urna eu magna consequat, quis
+      feugiat
+      libero vestibulum. Sed interdum nibh eget sodales facilisis.</p>
+  </div>
+</article>
+
+<script>
+  const readabilityNav = document.querySelector('readability-nav');
+  readabilityNav.addEventListener('optionSelected', event => {
+    if (event.detail.currentClass !== undefined) {
+      document.body.classList.remove(event.detail.currentClass);
+    }
+    if (event.detail.newClass !== undefined) {
+      document.body.classList.add(event.detail.newClass);
+    }
+  });
+</script>
 </body>
 </html>
